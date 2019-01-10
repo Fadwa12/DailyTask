@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-    
+   
     <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -160,26 +160,26 @@
     <div class="container clearfix">
       <div class="content col-lg-12 col-md-12 col-sm-12 clearfix">
         <div class="col-lg-4 col-md-4 col-sm-12">
-          <h4 class="title">
-                    	<span>Why Join Us?</span>
+<!--           <h4 class="title"> -->
+<!--                     	<span>Why Join Us?</span> -->
                     </h4>
-          <p></p>
-          <p></p>
+<!--           <p></p> -->
+<!--           <p></p> -->
         </div>
 
-        <div class="col-lg-4 col-md-4 col-sm-12">
-          <h4 class="title">
-                    	<span>Benefits</span>
-                    </h4>
+<!--       <div class="col-lg-4 col-md-4 col-sm-12"> -->
+<!--           <h4 class="title"> -->
+<!--                     	<span>Benefits</span> -->
+<!--                     </h4> -->
                     
                     
-           <ul class="check"> 
-            <li><a href="#">  <p> <c:if test="${!empty firstname }"> <c:out value=" ${ firstname  } ${ lastname } Votre compe a été crée avec succées!"> </c:out></c:if> </p></a> </li>
+<!--            <ul class="check">  -->
+<%--             <li><a href="#">  <p> <c:if test="${!empty utilisateurOp.firstname }"> <c:out value=" ${ utilisateurOp.firstname  } Votre compe a été crée avec succées!"> </c:out></c:if> </p></a> </li> --%>
             
-            <li><a href="#"><p>  <c:if test="${!empty email }">  <c:out value="Consulter votre Email ${ email } pour la confirmation  "> </c:out> </c:if></p></a></li>
+<%--             <li><a href="#"><p>  <c:if test="${!empty email }">  <c:out value="Consulter votre Email ${ email } pour la confirmation  "> </c:out> </c:if></p></a></li> --%>
             
-          </ul>
-        </div>
+<!--           </ul> -->
+<!--         </div> -->
         <!-- end login -->
 
         <div class="col-lg-4 col-md-4 col-sm-12">
@@ -188,22 +188,22 @@
                     </h4>
           <form id="registerform" method="post" name="registerform" action="inscription">
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="First name" name="firstname" id="firstname">
+              <input type="text" class="form-control" placeholder="First name" name="firstname" id="firstname" required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Last name" name="lastname" id="lastname">
+              <input type="text" class="form-control" placeholder="Last name" name="lastname" id="lastname"  required >
             </div>
             <div class="form-group">
-              <input type="email" class="form-control" placeholder="Email" name="email" id="email">
+              <input type="email" class="form-control" placeholder="Email" name="email" id="email" >
             </div>
             <div class="form-group">
-              <input type="password" class="form-control" placeholder="Password" name="password" id="password">
+              <input type="password" class="form-control" placeholder="Password" name="password" id="password"  required>
             </div>
             <div class="form-group">
-              <input type="text" class="form-control" placeholder="Re-enter password" name="repassword" id="repassword">
+              <input type="password" class="form-control" placeholder="Re-enter password" name="repassword" id="repassword" required>
             </div>
             <div class="form-group">
-              <input type="submit" class="button" value="Register an account">
+              <input type="submit" class="button" value="Register an account"  >
             </div>
           </form>
         </div>
@@ -330,6 +330,14 @@ pt>
 
   <!-- Template Main Javascript File -->
   <script src="Resources/js/main.js"></script>
+ 
+ 
+ 
+ 
+ <script src="Resources/js/inscription.js"></script>
+
+
+
 
 </body>
 </html>

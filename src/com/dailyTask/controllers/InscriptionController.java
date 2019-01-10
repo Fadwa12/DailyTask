@@ -7,6 +7,12 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.dailyTask.beans.UtilisateurOp;
+import com.dailyTask.utility.Utilitaire;
+import com.dailyTask.dao.DaoFactory;
+import com.dailyTask.dao.UtilisateurDao;
+import com.dailyTask.services.UtilisateurSvc;
+
 /**
  * Servlet implementation class InscriptionController
  */
@@ -14,10 +20,18 @@ import javax.servlet.http.HttpServletResponse;
 public class InscriptionController extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
+    
+	
+	
+	
+	
+	
     public InscriptionController() {
+    	
+    	
+    	
+    	
+    	
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,22 +48,55 @@ public class InscriptionController extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		String firstname= request.getParameter("firstname");
+		UtilisateurSvc utilisateurSvc =new UtilisateurSvc ();
+		
+		
+		
+		if (Utilitaire.verifLongeur(firstname))
+		{		
+		
+		UtilisateurOp utilisateurOp =new UtilisateurOp();
+		
+		
+		
 		String lastname = request.getParameter("lastname");
-		String firstname = request.getParameter("firstname");
-		String email= request.getParameter("email");
-       // String password= request.getParameter("password");
-       // String repassword= request.getParameter("repassword");
-				
-				
-				
-		request.setAttribute("firstname", firstname);
-		request.setAttribute("lastname", lastname);
-		request.setAttribute("email", email);
-		//request.setAttribute("password",password );
-		//request.setAttribute("repassword",repassword );
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
 		
 		
-		this.getServletContext().getRequestDispatcher("/WEB-INF/vues/inscription.jsp").forward(request, response);
+		utilisateurOp.setFirstname(firstname);
+		utilisateurOp.setLastname(lastname);
+		utilisateurOp.setEmail(email);
+		utilisateurOp.setPassword(password);
+		
+		//utilisateurOp.setFirstname(firstname);
+	//request.setAttribute("utilisateurOp", utilisateurOp);
+		
+		utilisateurSvc.ajouterUtilisateur(utilisateurOp); 
+	
 	}
-
+   
+		else {
+			System.out.println("kkkk");
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		doGet(request, response);
+	}
+	
+	
+	
 }
+
+
