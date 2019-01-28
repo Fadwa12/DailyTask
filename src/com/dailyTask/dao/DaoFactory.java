@@ -52,4 +52,8 @@ public class DaoFactory {
 	    }
 	    
 	    
+	    public TacheDao getTacheDao() {
+	    	return new TacheDaoImpl(this);
+	    }
+	    
 }

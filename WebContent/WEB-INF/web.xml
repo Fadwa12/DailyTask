@@ -2,26 +2,39 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
   <display-name>DailyTask</display-name>
   <servlet>
-  
-  <servlet-name>InscriptionController</servlet-name>
-  <servlet-class>com.dailyTask.controllers.InscriptionController</servlet-class>
-  
-  
+    <servlet-name>InscriptionController</servlet-name>
+    <servlet-class>com.dailyTask.controllers.InscriptionController</servlet-class>
   </servlet>
   <servlet-mapping>
-  
-  <servlet-name>InscriptionController</servlet-name>
-  <url-pattern>/inscription</url-pattern>
-  
-  
+    <servlet-name>InscriptionController</servlet-name>
+    <url-pattern>/inscription</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>ServicesController</servlet-name>
+    <servlet-class>com.dailyTask.controllers.ServicesController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ServicesController</servlet-name>
+    <url-pattern>/services</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>TacheController</servlet-name>
+    <servlet-class>com.dailyTask.controllers.TacheController</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TacheController</servlet-name>
+    <url-pattern>/tache</url-pattern>
   </servlet-mapping>
   
   
+    <servlet>
+    <servlet-name>LoginController</servlet-name>
+    <servlet-class>com.dailyTask.controllers.LoginController</servlet-class>
+  </servlet>
   
-  
- 
-  
-  
-  
+  <servlet-mapping>
+    <servlet-name>LoginController</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
   
 </web-app>
